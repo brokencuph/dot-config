@@ -1,4 +1,11 @@
+Import-Module CompletionPredictor
+
 Set-PSReadlineKeyHandler -Chord Tab -Function MenuComplete
+Set-PSReadLineOption -PredictionViewStyle ListView
+
+$PSStyle.Progress.View = 'Classic'
+$PSStyle.Progress.UseOSCIndicator = $true
+
 function Launch-VsDevShell {
     param (
         $Arch = 'amd64', $HostArch = 'amd64'
